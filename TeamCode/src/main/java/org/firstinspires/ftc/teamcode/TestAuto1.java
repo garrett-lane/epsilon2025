@@ -22,6 +22,9 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.MecanumDrive;
 
+import java.security.cert.CertPathBuilderResult;
+import java.util.Objects;
+
 @Config
 @Autonomous(name = "TEST_AUTO1", group = "Autonomous")
 public class TestAuto1 extends LinearOpMode {
@@ -55,6 +58,9 @@ public class TestAuto1 extends LinearOpMode {
                 .splineToConstantHeading(new Vector2d(60, 60), Math.PI/2)
                 .setTangent(0)
                 .splineToConstantHeading(new Vector2d(30, 30), Math.PI)
+                .strafeTo(new Vector2d(60, 60))
+                .strafeTo(new Vector2d(30, 30))
+                .strafeTo(new Vector2d(60, 60))
                .build();
 
         while (!isStopRequested() && !opModeIsActive()) {

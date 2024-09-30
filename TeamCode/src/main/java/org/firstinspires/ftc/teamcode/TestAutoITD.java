@@ -174,16 +174,16 @@ public class TestAutoITD extends LinearOpMode {
                     .build();
             AllMovements = drive.actionBuilder(drive.pose)
                     .strafeTo(new Vector2d(36, 0))
-                    //.waitSeconds(2)
+                    .waitSeconds(2)
                     .strafeTo(new Vector2d(60, -48))
                     .strafeTo(new Vector2d(48, -48))
-                    //.waitSeconds(2)
+                    .waitSeconds(2)
                     .strafeTo(new Vector2d(50, -50))
                     // turn 90
-                    //.waitSeconds(2)
+                    .waitSeconds(2)
                     .strafeToLinearHeading(new Vector2d(36, -58), 0)
                     .strafeTo(new Vector2d(50, -50))
-                    //.waitSeconds(2)
+                    .waitSeconds(2)
                     .strafeToLinearHeading(new Vector2d(21, -48),-92.68)
                     //turn back to 0
                     .strafeToLinearHeading(new Vector2d(55, -55), 0)

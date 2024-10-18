@@ -43,24 +43,25 @@ public class TestAuto1 extends LinearOpMode {
         rightFrontDrive = hardwareMap.get(DcMotor.class, "rightFront");
         rightBackDrive = hardwareMap.get(DcMotor.class, "rightBack");
 
-        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(60, 60, Math.toRadians(0)));
+        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(64.25, 0, Math.toRadians(0)));
 
         Action TrajectoryAction1;
 
         TrajectoryAction1 = drive.actionBuilder(drive.pose)
-               .strafeTo(new Vector2d(60, 30))
-               .strafeTo(new Vector2d(30, 30))
-               .strafeTo(new Vector2d(30, 60))
-               .strafeTo(new Vector2d(60, 60))
+               .strafeTo(new Vector2d(28, 0))
+                //(raise slide)
+               //.strafeTo(new Vector2d(30, 30))
+               //.strafeTo(new Vector2d(30, 60))
+               //.strafeTo(new Vector2d(60, 60))
+                //.setTangent(0)
+                //.splineToConstantHeading(new Vector2d(30, 30), 0)
+                //.setTangent(0)
+                //.splineToConstantHeading(new Vector2d(60, 60), Math.PI/2)
                 .setTangent(0)
-                .splineToConstantHeading(new Vector2d(30, 30), 0)
-                .setTangent(0)
-                .splineToConstantHeading(new Vector2d(60, 60), Math.PI/2)
-                .setTangent(0)
-                .splineToConstantHeading(new Vector2d(30, 30), Math.PI)
-                .strafeTo(new Vector2d(60, 60))
-                .strafeTo(new Vector2d(30, 30))
-                .strafeTo(new Vector2d(60, 60))
+                //.splineToConstantHeading(new Vector2d(30, 30), Math.PI)
+                //.strafeTo(new Vector2d(60, 60))
+                //.strafeTo(new Vector2d(30, 30))
+                //.strafeTo(new Vector2d(60, 60))
                .build();
 
         while (!isStopRequested() && !opModeIsActive()) {

@@ -123,7 +123,7 @@ public class TestAutoITD extends LinearOpMode {
             rightBackDrive = hardwareMap.get(DcMotor.class, "rightBack");
 
 
-            MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(65, 24, Math.toRadians(0)));
+            MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(64, 0, Math.toRadians(180)));
 
             Action MoveToSub;
             Action MoveToBasket;
@@ -170,25 +170,27 @@ public class TestAutoITD extends LinearOpMode {
 
             PlaceInBasket = drive.actionBuilder(drive.pose)
                     //Place in Basket
-                    .strafeToLinearHeading(new Vector2d(55, -55), 0)
+                    .strafeToLinearHeading(new Vector2d(64.25,0), 0)
                     .build();
             AllMovements = drive.actionBuilder(drive.pose)
-                    .strafeTo(new Vector2d(36, 0))
-                    .waitSeconds(2)
-                    .strafeTo(new Vector2d(60, -48))
-                    .strafeTo(new Vector2d(48, -48))
-                    .waitSeconds(2)
-                    .strafeTo(new Vector2d(50, -50))
-                    // turn 90
-                    .waitSeconds(2)
-                    .strafeToLinearHeading(new Vector2d(36, -58), 0)
-                    .strafeTo(new Vector2d(50, -50))
-                    .waitSeconds(2)
-                    .strafeToLinearHeading(new Vector2d(21, -48),-92.68)
-                    //turn back to 0
-                    .strafeToLinearHeading(new Vector2d(55, -55), 0)
+                    .strafeTo(new Vector2d(10, 0))
+                    // slide up
                     //.waitSeconds(2)
-                    .strafeTo(new Vector2d(55,-55))
+                    //.strafeToLinearHeading(new Vector2d(35,-42 ),315)
+                    //.strafeTo(new Vector2d(15,-52))
+                    //.strafeToLinearHeading(new Vector2d(68,-68),325)
+                    .waitSeconds(2)
+                    //.strafeTo(new Vector2d(50, -50))
+                    // turn 90
+                    //.waitSeconds(2)
+                    //.strafeToLinearHeading(new Vector2d(36, -58), 0)
+                    //.strafeTo(new Vector2d(50, -50))
+                    //.waitSeconds(2)
+                    //.strafeToLinearHeading(new Vector2d(21, -48),-92.68)
+                    //turn back to 0
+                    //.strafeToLinearHeading(new Vector2d(55, -55), 0)
+                    //.waitSeconds(2)
+                    //.strafeTo(new Vector2d(55,-55))
                     .build();
 
 

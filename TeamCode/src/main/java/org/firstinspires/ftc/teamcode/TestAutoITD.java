@@ -28,6 +28,13 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 @Autonomous(name = "TEST_AUTO_ITD", group = "Autonomous")
 public class TestAutoITD extends LinearOpMode {
 
+    private ElapsedTime runtime = new ElapsedTime();
+    private Servo SuperPluh = null;
+    private DcMotor leftFrontDrive = null;
+    private DcMotor leftBackDrive = null;
+    private DcMotor rightFrontDrive = null;
+    private DcMotor rightBackDrive = null;
+    private DcMotorEx pluh = null;
 
     // lift class
     public class pluh {
@@ -109,12 +116,7 @@ public class TestAutoITD extends LinearOpMode {
         }
 
         // Declare OpMode members for each of the 4 motors.
-        private ElapsedTime runtime = new ElapsedTime();
-        private Servo SuperPluh = null;
-        private DcMotor leftFrontDrive = null;
-        private DcMotor leftBackDrive = null;
-        private DcMotor rightFrontDrive = null;
-        private DcMotor rightBackDrive = null;
+
 
         public void runOpMode() {
             leftFrontDrive = hardwareMap.get(DcMotor.class, "leftFront");
@@ -173,24 +175,23 @@ public class TestAutoITD extends LinearOpMode {
                     .strafeToLinearHeading(new Vector2d(64.25,0), 0)
                     .build();
             AllMovements = drive.actionBuilder(drive.pose)
-                    .strafeTo(new Vector2d(10, 0))
                     // slide up
-                    //.waitSeconds(2)
-                    //.strafeToLinearHeading(new Vector2d(35,-42 ),315)
-                    //.strafeTo(new Vector2d(15,-52))
-                    //.strafeToLinearHeading(new Vector2d(68,-68),325)
                     .waitSeconds(2)
-                    //.strafeTo(new Vector2d(50, -50))
+                    .strafeToLinearHeading(new Vector2d(35,-42 ),315)
+                    .strafeTo(new Vector2d(15,-52))
+                    .strafeToLinearHeading(new Vector2d(68,-68),325)
+                    .waitSeconds(2)
+                    .strafeTo(new Vector2d(50, -50))
                     // turn 90
-                    //.waitSeconds(2)
-                    //.strafeToLinearHeading(new Vector2d(36, -58), 0)
-                    //.strafeTo(new Vector2d(50, -50))
-                    //.waitSeconds(2)
-                    //.strafeToLinearHeading(new Vector2d(21, -48),-92.68)
+                    .waitSeconds(2)
+                    .strafeToLinearHeading(new Vector2d(36, -58), 0)
+                    .strafeTo(new Vector2d(50, -50))
+                    .waitSeconds(2)
+                    .strafeToLinearHeading(new Vector2d(21, -48),-92.68)
                     //turn back to 0
-                    //.strafeToLinearHeading(new Vector2d(55, -55), 0)
-                    //.waitSeconds(2)
-                    //.strafeTo(new Vector2d(55,-55))
+                    .strafeToLinearHeading(new Vector2d(55, -55), 0)
+                    .waitSeconds(2)
+                    .strafeTo(new Vector2d(55,-55))
                     .build();
 
 

@@ -35,7 +35,9 @@ public class TestAuto1 extends LinearOpMode {
     private DcMotor leftBackDrive = null;
     private DcMotor rightFrontDrive = null;
     private DcMotor rightBackDrive = null;
-
+    private DcMotor slide = null;
+//lift class
+    
     @Override
     public void runOpMode() {
         leftFrontDrive = hardwareMap.get(DcMotor.class, "leftFront");
